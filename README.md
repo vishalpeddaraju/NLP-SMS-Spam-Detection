@@ -126,7 +126,7 @@ The confusion matrix illustrates the classification performance of the TF-IDF mo
 
 The classification report presents the precision, recall, F1-score, and support for the Word2Vec model.
 
-![Word2Vec Classification Report](screenshots/word2vec-classification-report.png)
+![Word2Vec Classification Report](screenshots/Word2Vec-Classification-Report.png)
 
 #### 3. Model Accuracy Comparison
 
