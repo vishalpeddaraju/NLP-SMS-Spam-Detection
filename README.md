@@ -1,13 +1,14 @@
+
 # SMS Spam Detection Using Natural Language Processing (NLP)
 
 ## Project Overview
 
-This project focuses on developing a Machine Learning-based Email Spam Detection system using Natural Language Processing (NLP).
+This project focuses on developing a Machine Learning-based SMS Spam Detection system using Natural Language Processing (NLP).
 
-The objective is to classify email messages into two categories:
+The objective is to classify SMS messages into two categories:
 
-- **Ham:** Legitimate emails.
-- **Spam:** Unwanted, fraudulent, or promotional emails.
+- **Ham:** Legitimate messages.
+- **Spam:** Unwanted, fraudulent, or promotional messages.
 
 The project explores different text representation techniques to understand their impact on machine learning classification performance.
 
@@ -31,7 +32,7 @@ The following NLP techniques are implemented and compared:
 
 ### 1. Bag of Words (BoW)
 
-Bag of Words converts email text into numerical feature vectors based on word occurrence.
+Bag of Words converts SMS text into numerical feature vectors based on word occurrence.
 
 **Implementation:**
 - Text representation using `CountVectorizer`.
@@ -42,7 +43,7 @@ Bag of Words converts email text into numerical feature vectors based on word oc
 
 ### 2. TF-IDF (Term Frequency–Inverse Document Frequency)
 
-TF-IDF represents email text based on the importance of words within an email relative to the complete collection of emails.
+TF-IDF represents SMS text based on the importance of words within a message relative to the complete collection of messages.
 
 **Implementation:**
 - Text representation using `TfidfVectorizer`.
@@ -56,7 +57,7 @@ Word2Vec is a word embedding technique that converts words into dense numerical 
 
 **Implementation:**
 - Word embedding generation using Gensim.
-- Training a Word2Vec model on the training email messages.
+- Training a Word2Vec model on the training SMS messages.
 - Skip-gram architecture (`sg=1`).
 - Vector size of 100 dimensions.
 - Average word embeddings to generate document-level representations.
@@ -66,9 +67,9 @@ Word2Vec is a word embedding technique that converts words into dense numerical 
 
 The project follows these major steps:
 
-1. Load the email spam dataset.
+1. Load the SMS spam dataset.
 2. Examine the dataset and class distribution.
-3. Clean and preprocess email messages.
+3. Clean and preprocess SMS messages.
 4. Convert text to lowercase.
 5. Remove unwanted characters and stopwords.
 6. Apply stemming using Porter Stemmer.
@@ -80,19 +81,19 @@ The project follows these major steps:
 
 ## Dataset
 
-**Dataset:** Email Spam Dataset
+**Dataset:** [SMS Spam Collection Dataset – UCI Machine Learning Repository](https://archive.ics.uci.edu/dataset/228/sms+spam+collection)
 
-The dataset contains email messages labelled as either `ham` or `spam`.
+The dataset contains SMS messages labelled as either `ham` or `spam`.
 
-The dataset is used to train and evaluate machine learning models for identifying unwanted email messages.
+It is used to train and evaluate machine learning models for identifying unwanted and fraudulent SMS messages.
 
 ## Model Evaluation
 
 The models are evaluated using the following performance metrics:
 
-- **Accuracy:** Measures the overall proportion of correctly classified emails.
-- **Precision:** Measures how many emails predicted as spam are actually spam.
-- **Recall:** Measures how many actual spam emails are correctly identified.
+- **Accuracy:** Measures the overall proportion of correctly classified SMS messages.
+- **Precision:** Measures how many messages predicted as spam are actually spam.
+- **Recall:** Measures how many actual spam messages are correctly identified.
 - **F1-Score:** Represents the harmonic mean of precision and recall.
 - **Confusion Matrix:** Provides a detailed view of correct and incorrect predictions.
 
@@ -109,8 +110,8 @@ The following table presents the performance of the three implemented NLP approa
 ### Key Observations
 
 - **TF-IDF achieved the highest accuracy of 97.22%** and the highest F1-score of 88.39%.
-- **TF-IDF achieved 100% precision**, indicating that all emails predicted as spam in the test set were actually spam.
-- **Word2Vec achieved the highest recall of 83.22%**, identifying a larger proportion of actual spam emails compared with the other two approaches.
+- **TF-IDF achieved 100% precision**, indicating that all SMS messages predicted as spam in the test set were actually spam.
+- **Word2Vec achieved the highest recall of 83.22%**, identifying a larger proportion of actual spam messages compared with the other two approaches.
 - Bag of Words achieved an accuracy of 96.68%, demonstrating strong classification performance.
 
 ### Model Evaluation Visualizations
@@ -123,4 +124,67 @@ The confusion matrix illustrates the classification performance of the TF-IDF mo
 
 #### 2. Word2Vec Classification Report
 
-The classification report presents the precision, recall, F1
+The classification report presents the precision, recall, F1-score, and support for the Word2Vec model.
+
+![Word2Vec Classification Report](screenshots/word2vec-classification-report.png)
+
+#### 3. Model Accuracy Comparison
+
+The following visualization compares the accuracy of the three NLP approaches.
+
+![Model Accuracy Comparison](screenshots/model-accuracy-comparison.png)
+
+## Project Structure
+
+```text
+SMS-Spam-Detection/
+│
+├── word2vec_fromscratch.ipynb
+├── requirements.txt
+├── README.md
+│
+└── screenshots/
+    ├── tfidf-confusion-matrix.png
+    ├── word2vec-classification-report.png
+    └── model-accuracy-comparison.png
+```
+
+## Installation and Execution
+
+### 1. Clone the Repository
+
+```bash
+git clone https://github.com/vishalpeddaraju/NLP-SMS-Spam-Detection.git
+```
+
+### 2. Navigate to the Project Directory
+
+```bash
+cd NLP-SMS-Spam-Detection
+```
+
+### 3. Install Dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+### 4. Run the Notebook
+
+Open `word2vec_fromscratch.ipynb` using Jupyter Notebook or Google Colab and execute the cells sequentially.
+
+## Conclusion
+
+This project demonstrates how different Natural Language Processing techniques can be applied to SMS Spam Detection.
+
+Three text representation techniques — Bag of Words, TF-IDF, and Word2Vec — were implemented and evaluated using machine learning classifiers.
+
+Among the evaluated approaches, TF-IDF achieved the highest accuracy of 97.22%, while Word2Vec achieved the highest spam recall of 83.22%.
+
+The comparison highlights how different text representation techniques influence classification performance.
+
+## Author
+
+**Vishal Peddaraju**
+
+GitHub: [vishalpeddaraju](https://github.com/vishalpeddaraju)
