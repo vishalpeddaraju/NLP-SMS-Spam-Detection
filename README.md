@@ -1,8 +1,8 @@
-# SMS Spam Detection Using Natural Language Processing (NLP)
+# Email Spam Detection Using Natural Language Processing (NLP)
 
 ## Project Overview
 
-This project focuses on developing a Machine Learning-based SMS Spam Detection system using Natural Language Processing (NLP).
+This project focuses on developing a Machine Learning-based Email Spam Detection system using Natural Language Processing (NLP).
 
 The objective is to classify SMS messages into two categories:
 
