@@ -1,4 +1,4 @@
-# Email Spam Detection Using Natural Language Processing (NLP)
+# SMS Spam Detection Using Natural Language Processing (NLP)
 
 ## Project Overview
 
